@@ -2,6 +2,7 @@
 {
     using PersonEntities;
     using System;
+    using PdfController.Framework;
 
     public class Program
     {
@@ -9,12 +10,15 @@
         {
             var controller = new PersonEntitiesController();
 
-            while (true)
-            {
-                Console.Write("Enter command: ");
-                var command = Console.ReadLine();
-                controller.ExecuteCommand(command);
-            }
+            //while (true)
+            //{
+            //    Console.Write("Enter command: ");
+            //    var command = Console.ReadLine();
+            //    controller.ExecuteCommand(command);
+            //}
+
+            var pdfController = new PdfController();
+            pdfController.createPdf("../../../test.pdf");
         }
     }
 }
