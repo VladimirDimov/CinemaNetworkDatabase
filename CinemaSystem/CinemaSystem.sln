@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaSystem.UI", "CinemaSystem.UI\CinemaSystem.UI.csproj", "{287508AC-6EA5-4692-9DA8-DF56E1677BC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaSystem.Data", "CinemaSystem.Data\CinemaSystem.Data.csproj", "{2F83D00C-CCD2-4A27-90A0-7DA4B5DB7153}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaSystem.Importer", "CinemaSystem.Importer\CinemaSystem.Importer.csproj", "{C4EB9A08-3A6B-44EB-8800-60830425F229}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaSystem.Exporters", "CinemaSystem.Exporters\CinemaSystem.Exporters.csproj", "{DDB048BB-BF46-4B2C-AF2B-6B974686B5CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{287508AC-6EA5-4692-9DA8-DF56E1677BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{287508AC-6EA5-4692-9DA8-DF56E1677BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{287508AC-6EA5-4692-9DA8-DF56E1677BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{287508AC-6EA5-4692-9DA8-DF56E1677BC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F83D00C-CCD2-4A27-90A0-7DA4B5DB7153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F83D00C-CCD2-4A27-90A0-7DA4B5DB7153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F83D00C-CCD2-4A27-90A0-7DA4B5DB7153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F83D00C-CCD2-4A27-90A0-7DA4B5DB7153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4EB9A08-3A6B-44EB-8800-60830425F229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4EB9A08-3A6B-44EB-8800-60830425F229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4EB9A08-3A6B-44EB-8800-60830425F229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4EB9A08-3A6B-44EB-8800-60830425F229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDB048BB-BF46-4B2C-AF2B-6B974686B5CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDB048BB-BF46-4B2C-AF2B-6B974686B5CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDB048BB-BF46-4B2C-AF2B-6B974686B5CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDB048BB-BF46-4B2C-AF2B-6B974686B5CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

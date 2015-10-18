@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\TELERIK\Databases\TeamWork\CinemaNetworkDatabase\CinemaMongoDb\MongoToCql\PersonEntities\PersonEntities.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\TELERIK\Databases\TeamWork\CinemaNetworkDatabase\CinemaSystem\CinemaSystem.Data\CinemaEnitties.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
