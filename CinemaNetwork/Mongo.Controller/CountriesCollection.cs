@@ -24,11 +24,11 @@ namespace MongoToSql.Entities
             this.countries.Add("Australia");
         }
 
-        public Country GetRandomCountry()
+        public CountryMongo GetRandomCountry()
         {
             var index = this.randomGenerator.Next(0, this.countries.Count);
             var countryName = countries[index];
-            return new Country(index, countryName);
+            return new CountryMongo(index, countryName);
         }
     }
 }

@@ -1,17 +1,17 @@
-﻿namespace MongoToSql
+﻿namespace Mongo.Controller
 {
     using MongoToSql.Entities;
     using RandomGenerators;
     using System;
     using System.Collections.Generic;
 
-    public class DataGenerator
+    public class MongoDataGenerator
     {
         private static Random randomGenerator = new Random();
 
-        public void GenerateData(string dbName, string host, int numberOfEntities)
+        internal void GenerateRandomPeopleData(string dbName, string host, int numberOfEntities)
         {
-            var dbController = new DbController(dbName, host);
+            var dbController = new MongoDbController(dbName, host);
             var db = dbController.GetDatabase();
             var collection = db.GetCollection<PersonMongo>("Person");
             var personCollection = new List<PersonMongo>();
@@ -36,14 +36,14 @@
             Console.WriteLine("Person data created");
         }
 
-        private Gender GetGender(int i)
+        private GenderMongo GetGender(int i)
         {
             if (i % 2 == 0)
             {
-                return new Gender(1, 1);
+                return new GenderMongo(1, "male");
             }
 
-            return new Gender(2, 2);
+            return new GenderMongo(2, "female");
         }
     }
 }

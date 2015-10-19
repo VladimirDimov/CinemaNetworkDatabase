@@ -7,9 +7,9 @@ using System.Text;
 
 namespace MongoToSql
 {
-    public class Country
+    public class CountryMongo
     {
-        public Country(int id, string name)
+        public CountryMongo(int id, string name)
         {
             this.CountryId = id;
             this.Name = name;

@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="MongoDB.Bson">
       <HintPath>..\packages\MongoDB.Bson.2.0.1\lib\net45\MongoDB.Bson.dll</HintPath>
     </Reference>
@@ -40,6 +46,7 @@
       <HintPath>..\packages\MongoDB.Driver.Core.2.0.1\lib\net45\MongoDB.Driver.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,17 +56,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CountriesCollection.cs" />
-    <Compile Include="DataGenerator.cs" />
-    <Compile Include="DbController.cs" />
+    <Compile Include="MongoDataGenerator.cs" />
+    <Compile Include="MongoDbController.cs" />
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\Gender.cs" />
     <Compile Include="Entities\PersonMongo.cs" />
+    <Compile Include="PersonEntitiesController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CinemaNetwork.Models\CinemaNetwork.Models.csproj">
+      <Project>{8f6e5670-884d-44be-ac30-488c4918838d}</Project>
+      <Name>CinemaNetwork.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RandomGenerator.Data\RandomGenerator.Data.csproj">
       <Project>{2a2ccdf4-a4f7-4db5-bc53-789908d7dcd6}</Project>
       <Name>RandomGenerator.Data</Name>
