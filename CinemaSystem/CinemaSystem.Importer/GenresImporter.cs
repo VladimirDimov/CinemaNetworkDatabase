@@ -16,6 +16,6 @@
             get { return 2; }
         }
 
-        public Action<CinameNetworkEntities, TextWriter> Get { get; }
+        public Action<CinameEntities, TextWriter> Get { get; set; }
     }
 }
