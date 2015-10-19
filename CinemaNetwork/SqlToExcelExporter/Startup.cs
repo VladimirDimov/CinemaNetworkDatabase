@@ -1,10 +1,12 @@
-﻿using SqlToExcelExporter;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace SqlToXmlExporter
 {
     using System;
     using CinemaNetwork.Models;
     using RandomGenerators;
+    using SqlToExcelExporter;
 
     public class Startup
     {
@@ -16,12 +18,29 @@ namespace SqlToXmlExporter
             //Console.WriteLine("Row affected - new movie with movieId {0} created", newId);
 
             // InsertNewCountries(5);
-            SqlToExcel.WriteDataToExcelFile();
+
+            var countries = new List<string>();
+            var numberOfMoives = new List<int>();
+
+            var db = new CinameNetworkEntities();
+            using (db)
+            {
+                countries = db.Countries
+                            .Select(x => x.Name)
+                            .ToList();
+
+                numberOfMoives = db.Countries
+                        .Select(y => y.Movies.Count)
+                        .ToList();
+            }
+
+
+            SqlToExcel.WriteDataToExcelFile(countries, numberOfMoives);
         }
 
         public static int InserNewMovie()
         {
-            var rand = new RandomGeneratorController();
+            var rand = new RandomGenerator();
 
             CinameNetworkEntities northwindEntities = new CinameNetworkEntities();
 
@@ -48,7 +67,7 @@ namespace SqlToXmlExporter
         {
             while (count > 0)
             {
-                var rand = new RandomGeneratorController();
+                var rand = new RandomGenerator();
 
                 CinameNetworkEntities northwindEntities = new CinameNetworkEntities();
 

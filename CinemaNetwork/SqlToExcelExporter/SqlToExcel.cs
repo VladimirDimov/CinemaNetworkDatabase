@@ -1,4 +1,4 @@
-﻿using CinemaNetwork.Models;
+﻿using System.Runtime.CompilerServices;
 
 namespace SqlToExcelExporter
 {
@@ -7,30 +7,33 @@ namespace SqlToExcelExporter
     using System.Data.OleDb;
     using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
+    using CinemaNetwork.Models;
+
 
     public class SqlToExcel
     {
         private string connectionString =
             "Provider=Microsoft.Jet.OleDb.4.0; Data Source=D:../../MySamplefile.xls; Extended Properties=Excel 8.0;";
 
-        public static void WriteDataToExcelFile()
+        public static void WriteDataToExcelFile(IList<string> stringEntities, IList<int> numberEntities )
         {
             var connectionString = GetConnectionString();
             using (var oleDbConnection = new OleDbConnection(connectionString))
             {
                 oleDbConnection.Open();
-                var sheetName = GetSheetName(oleDbConnection);
-                var cmd = GetCommand(oleDbConnection, sheetName);
 
-                var queryResult = cmd.ExecuteNonQuery();
-                Console.WriteLine("({0} row(s) affected)", queryResult);
+                for (int i = 0; i < stringEntities.Count; i++)
+                {
+                    var sheetName = GetSheetName(oleDbConnection);
+                    var cmd = GetCommand(oleDbConnection, sheetName, stringEntities[i], numberEntities[i]);
+                    var queryResult = cmd.ExecuteNonQuery();
+                    Console.WriteLine("({0} row(s) affected)", queryResult);
+                }
             }
         }
 
         private static string GetConnectionString()
         {
-
             var props = new Dictionary<string, string>();
             props["Provider"] = "Microsoft.Jet.OLEDB.4.0";
             props["Extended Properties"] = "Excel 8.0";
@@ -55,25 +58,12 @@ namespace SqlToExcelExporter
             return dataTable;
         }
 
-        private static OleDbCommand GetCommand(OleDbConnection oleDbConnection, string sheetName)
+        private static OleDbCommand GetCommand(OleDbConnection oleDbConnection, string sheetName, string country, int numberOfMovies)
         {
-            var countries = new List<string>();
+            var cmd = new OleDbCommand("INSERT INTO [" + sheetName + "] VALUES (@country , @numberOfMovies)", oleDbConnection);
 
-            var db = new CinameNetworkEntities();
-
-            using (db)
-            {
-                countries = db.Countries
-                                .Select(x => x.Name)
-                                .ToList();
-            } 
-
-            var cmd = new OleDbCommand("INSERT INTO [" + sheetName + "] VALUES (@name, @score)", oleDbConnection);
-
-            for (int i = 0; i < countries.Count; i++)
-            {
-                cmd.Parameters.AddWithValue("@name", countries[i]);
-            }
+            cmd.Parameters.AddWithValue("@country", country);
+            cmd.Parameters.AddWithValue("@numberOfMovies", numberOfMovies);
 
             return cmd;
         }
