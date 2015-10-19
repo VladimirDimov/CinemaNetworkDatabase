@@ -60,6 +60,10 @@
       <Project>{8f6e5670-884d-44be-ac30-488c4918838d}</Project>
       <Name>CinemaNetwork.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Json.Contorller\Json.Contorller.csproj">
+      <Project>{4277c0fc-21f5-49b9-8c3b-a13eef32df32}</Project>
+      <Name>Json.Contorller</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mongo.Controller\Mongo.Controller.csproj">
       <Project>{51278b97-eed5-45d7-9b2f-6ad518a8fb1a}</Project>
       <Name>Mongo.Controller</Name>

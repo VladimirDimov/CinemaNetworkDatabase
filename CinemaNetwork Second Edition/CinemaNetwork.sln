@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUI\ConsoleUI.csproj", "{2562259C-374C-430A-A393-416ABD1ABD42}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml.Controller", "Xml.Controller\Xml.Controller.csproj", "{B004EA50-5311-48F6-A897-66BC71A676FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlReporter.Generators", "XmlReporter.Generators\XmlReporter.Generators.csproj", "{AEDA35E6-918E-4C63-A40C-877FFFB11EE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json.Contorller", "Json.Contorller\Json.Contorller.csproj", "{4277C0FC-21F5-49B9-8C3B-A13EEF32DF32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{AEDA35E6-918E-4C63-A40C-877FFFB11EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEDA35E6-918E-4C63-A40C-877FFFB11EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEDA35E6-918E-4C63-A40C-877FFFB11EE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4277C0FC-21F5-49B9-8C3B-A13EEF32DF32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4277C0FC-21F5-49B9-8C3B-A13EEF32DF32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4277C0FC-21F5-49B9-8C3B-A13EEF32DF32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4277C0FC-21F5-49B9-8C3B-A13EEF32DF32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
