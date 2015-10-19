@@ -11,7 +11,7 @@
         public void GenerateData(string dbName, string host, int numberOfEntities)
         {
             var dbController = new DbController(dbName, host);
-            var db = dbController.GetDatabase(dbName, host);
+            var db = dbController.GetDatabase();
             var collection = db.GetCollection<PersonMongo>("Person");
             var personCollection = new List<PersonMongo>();
             var countryGenerator = new CountriesCollection();
