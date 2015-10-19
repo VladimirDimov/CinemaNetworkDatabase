@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace MongoToSql.Entities
 {
-    public class Genders
+    public class Gender
     {
-        public Genders(int id, string type)
+        public Gender(int id, int type)
         {
             this.GenderId = id;
             this.Type = type;
@@ -15,7 +15,7 @@ namespace MongoToSql.Entities
         [BsonRepresentation(BsonType.Int32)]
         public int GenderId { get; set; }
 
-        public string Type { get; set; }
+        public int Type { get; set; }
 
         public virtual ICollection<PersonMongo> People { get; set; }
     }

@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class RandomGeneratorController
+    public class RandomGenerator
     {
         private static Random random = new Random();
         private const string Capitals = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

@@ -52,12 +52,18 @@
     <Compile Include="DataGenerator.cs" />
     <Compile Include="DbController.cs" />
     <Compile Include="Entities\Country.cs" />
-    <Compile Include="Entities\Genders.cs" />
+    <Compile Include="Entities\Gender.cs" />
     <Compile Include="Entities\PersonMongo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RandomGenerator.Data\RandomGenerator.Data.csproj">
+      <Project>{2a2ccdf4-a4f7-4db5-bc53-789908d7dcd6}</Project>
+      <Name>RandomGenerator.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

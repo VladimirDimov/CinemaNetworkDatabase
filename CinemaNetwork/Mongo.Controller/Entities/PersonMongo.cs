@@ -6,7 +6,7 @@
 
     public class PersonMongo
     {
-        public PersonMongo(int id, string firstName, string lastName, Genders gender, int birthYear, Country country)
+        public PersonMongo(int id, string firstName, string lastName, Gender gender, int birthYear, Country country)
         {
             this.PersonId = id;
             this.FirstName = firstName;
@@ -29,6 +29,6 @@
 
         public virtual Country Country { get; set; }
 
-        public virtual Genders Genders { get; set; }
+        public virtual Gender Genders { get; set; }
     }
 }

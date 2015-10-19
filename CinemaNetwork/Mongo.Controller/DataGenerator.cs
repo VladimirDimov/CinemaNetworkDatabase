@@ -1,6 +1,7 @@
 ﻿namespace MongoToSql
 {
     using MongoToSql.Entities;
+    using RandomGenerators;
     using System;
     using System.Collections.Generic;
 
@@ -11,36 +12,38 @@
         public void GenerateData(string dbName, string host, int numberOfEntities)
         {
             var dbController = new DbController(dbName, host);
-            var db = dbController.GetDatabase(dbName, host);
+            var db = dbController.GetDatabase();
             var collection = db.GetCollection<PersonMongo>("Person");
             var personCollection = new List<PersonMongo>();
             var countryGenerator = new CountriesCollection();
+            var randomGenerator = new RandomGenerator();
 
             for (int i = 1; i <= numberOfEntities; i++)
             {
-                personCollection.Add(new PersonMongo(i, "FName" + i, "LastName" + i, GetGender(i), GetRandomYear(), countryGenerator.GetRandomCountry()));
+                personCollection.Add(new PersonMongo(
+                    i,
+                    randomGenerator.GetRandomString(3, 5, true),
+                    randomGenerator.GetRandomString(4, 7, true),
+                    GetGender(i),
+                    randomGenerator.GetRandomInt(1920,2015),
+                    countryGenerator.GetRandomCountry()));
             }
 
             collection.InsertManyAsync(personCollection);
             Console.Write("Press key");
-            Console.ReadLine();
+            Console.ReadKey();
 
             Console.WriteLine("Person data created");
         }
 
-        private Genders GetGender(int i)
+        private Gender GetGender(int i)
         {
             if (i % 2 == 0)
             {
-                return new Genders(1, "Male");
+                return new Gender(1, 1);
             }
 
-            return new Genders(2, "Female");
-        }
-
-        private int GetRandomYear()
-        {
-            return randomGenerator.Next(1930, 2000);
+            return new Gender(2, 2);
         }
     }
 }
