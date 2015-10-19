@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2562259C-374C-430A-A393-416ABD1ABD42}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{D072C103-F006-4A55-8F91-8ABDBA16BF58}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleUI</RootNamespace>
-    <AssemblyName>ConsoleUI</AssemblyName>
+    <RootNamespace>CinemaNetwork.Generators</RootNamespace>
+    <AssemblyName>CinemaNetwork.Generators</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -48,18 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="PersonModel.cs" />
+    <Compile Include="XmlReportGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GenreModel.cs" />
+    <Compile Include="MovieModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CinemaNetwork.Models\CinemaNetwork.Models.csproj">
+      <Project>{8f6e5670-884d-44be-ac30-488c4918838d}</Project>
+      <Name>CinemaNetwork.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RandomGenerator.Data\RandomGenerator.Data.csproj">
+      <Project>{2a2ccdf4-a4f7-4db5-bc53-789908d7dcd6}</Project>
+      <Name>RandomGenerator.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CinemaNetwork.Generators\CinemaNetwork.Generators.csproj">
-      <Project>{d072c103-f006-4a55-8f91-8abdba16bf58}</Project>
-      <Name>CinemaNetwork.Generators</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
