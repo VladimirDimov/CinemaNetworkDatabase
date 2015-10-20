@@ -5,7 +5,7 @@
 
     public static class DirectoryCreator
     {
-        public static void CreateDirectoryIfUnexistant(string directory)
+        public static void CreateDirectoryIfNonExist(string directory)
         {
             if (!Directory.Exists(directory))
             {

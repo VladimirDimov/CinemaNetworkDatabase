@@ -50,7 +50,7 @@
             path = DirectoryCreator.AddExtention(path, this.folderExtention);
             try
             {
-                DirectoryCreator.CreateDirectoryIfUnexistant(path);
+                DirectoryCreator.CreateDirectoryIfNonExist(path);
                 foreach (var reportEntry in this.reportsEntries)
                 {
                     var fileName = this.reportsEntries.IndexOf(reportEntry) + 1 + this.fileExtention;
